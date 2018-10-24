@@ -1,0 +1,47 @@
+{
+  "name": "product-service-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha test/*.js",
+    "lint": "node node_modules/eslint/bin/eslint.js app/**/*.js && node node_modules/eslint/bin/eslint.js test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jebzmos4@bitbucket.org/terragonengineering/andromeda-user-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/terragonengineering/andromeda-user-service#readme",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "chai-http": "4.0.0",
+    "mocha": "5.1.0"
+  },
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "create-hmac": "1.1.7",
+    "dotenv": "5.0.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0",
+    "express": "4.16.3",
+    "moment": "2.22.1",
+    "mongod": "2.0.0",
+    "mongoose": "5.0.15",
+    "request": "2.85.0",
+    "request-promise": "4.2.2",
+    "restify": "7.1.1",
+    "restify-cors-middleware": "^1.1.0",
+    "restify-errors": "6.0.0",
+    "restify-plugins": "1.6.0",
+    "winston": "2.4.1",
+    "winston-daily-rotate-file": "3.1.2",
+    "yargs": "11.0.0"
+  }
+}
