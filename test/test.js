@@ -15,15 +15,15 @@ const mongoose = require('mongoose');
 
 
 // Our parent block
-describe('Users', () => {
+describe('Products', () => {
   if (mongoose.connection.readyState === 2) {
     /*
   * Test the /GET route
   */
-    describe('/GET user', () => {
-      it('it should GET all the users', (done) => {
+    describe('/GET product', () => {
+      it('it should GET all the products', (done) => {
         chai.request(server)
-          .get('/users')
+          .get('/products')
           .end((err, res) => {
             chai.expect(res.body).have.property('code').eqls(200);
             done();
@@ -35,14 +35,14 @@ describe('Users', () => {
     /*
   * Test the /GET/:email route
   */
-    describe('/GET/:email user', () => {
-      it('it should GET a user by the given email', (done) => {
-        const email = 'mjebutu@terragonltd.com';
+    describe('/GET/:id product', () => {
+      it('it should GET a product by the given id', (done) => {
+        const id = 'ft-90';
         chai.request(server)
-          .get(`/users/${email}`)
+          .get(`/users/${id}`)
           .end((err, res) => {
             chai.expect(res.body).have.property('code', 200);
-            chai.expect(res.body).have.property('data').have.property('email').eql('mjebutu@terragonltd.com');
+            chai.expect(res.body).have.property('data').have.property('id').eql('ft-90');
             chai.expect(res.body).be.a('object');
             chai.expect(res.body).not.be.a('array');
             done();
@@ -53,62 +53,17 @@ describe('Users', () => {
     /*
   * Test the /PATCH route
   */
-    describe('/PATCH/:email user', () => {
-      it('it should DEACTIVATE a user given the email', (done) => {
-        const email = 'mjebutu@terragonltd.com';
+    describe('/PATCH/:id product', () => {
+      it('it should update a product details given the id', (done) => {
+        const id = 'ft-90';
         chai.request(server)
-          .patch(`/users/status/${email}?status=inactive`)
+          .patch(`/products/update/${id}`)
           .end((err, res) => {
             chai.expect(res.body).have.deep.property('code').eql(200);
             chai.expect(res.body).be.a('object');
-            chai.expect(res.body).have.property('data').have.property('active').equals(false);
             done();
           });
       });
-    });
-
-    describe('/PATCH/:email user', () => {
-      it('it should not DEACTIVATE a user when no parameter is passed', (done) => {
-        const email = 'mjebutu@terragonltd.com';
-        chai.request(server)
-          .patch(`/users/status/${email}?status=`)
-          .end((err, res) => {
-            chai.expect(res.body).have.property('code').eql(400);
-            chai.expect(res.body).be.a('object');
-            done();
-          });
-      });
-    });
-    /*
-* Test the /users/:email route for activating a user
-*/
-    describe('/users/:email user', () => {
-      it('it should ACTIVATE a user given the email', (done) => {
-        const email = 'mjebutu@terragonltd.com';
-        chai.request(server)
-          .patch(`/users/status/${email}?status=active`)
-          .end((err, res) => {
-            chai.expect(res.body).have.property('code').eql(200);
-            chai.expect(res.body).be.a('object');
-            chai.expect(res.body).have.property('data').have.property('active').equals(true);
-            done();
-          });
-      });
-    });
-
-    describe('/users/authenticate/:app', () => {
-      it('it should AUTHENTICATE the tokens sent by google', (done) => {
-        const token = process.env.TOKEN;
-        chai.request(server)
-          .get(`/users/authenticate/mobilezone?token=${token}`)
-          .end((err, res) => {
-            chai.expect(res.body).have.property('code').eql(200);
-            chai.expect(res.body).have.property('message').eql('User authenticated successfully');
-            chai.expect(res.body).be.a('object');
-            chai.expect(res.body).have.property('data').have.property('email').eql('mjebutu@terragonltd.com');
-            done();
-          });
-      }).timeout(10000);
     });
   }
 });

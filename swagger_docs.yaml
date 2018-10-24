@@ -1,13 +1,9 @@
 swagger: "2.0"
 info:
-  title: User Authentication Service
-  description: This is user authentication micro services that integrates the google
-    sign action of the user on the front end. this service simply takes the token
-    sent by google makes a request with it to get the user details to determine if
-    that credential has access to the system
-  termsOfService: https://bitbucket.org/terragonengineering/andromeda-user-service/wiki/Home
+  title: Product Service API
+  description: This is the product service api to manage all actions concerning a product or products
   contact:
-    email: mjebutu@terragonltd.com
+    email: jebzmos4@gmail.com
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -42,7 +38,7 @@ paths:
       operationId: findaUserbyEmail
       parameters:
       - name: email
-        in: path
+        in: pathterragonltd
         description: email unique to the user that filters that user
         required: true
         type: string
