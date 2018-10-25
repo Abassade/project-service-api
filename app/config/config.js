@@ -4,7 +4,7 @@ const config = {
   app_name: appName,
   server: {
     url: process.env.APP_URL,
-    port: process.env.APP_PORT
+    port: process.env.PORT
   },
   mongo: {
     connection: {
