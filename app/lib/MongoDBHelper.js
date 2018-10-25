@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint radix: ["error", "as-needed"] */
-/**
- * Created by Jebutu Morifeoluwa on 20/10/2018.
- */
-
 const config = require('../config/config');
 
 // let pageParam;
@@ -128,32 +124,30 @@ class MongoDBHelper {
   * @param data - the data to update
   * @returns {Promise}
   */
- updateProductDetails(data, params) {
- return new Promise((resolve, reject) => this.mongoDBModel.findOneAndUpdate(
-   { id: params },
-   { $set: data },
-   { new: true },
-   (error, response) => {
-     if (error) {
-       return reject(this.handleError(error));
-     }
-     if (error == null && response == null) {
-       return reject(new Error({ error: true, msg: 'Record Not Found In DB' }));
-     }
-     return resolve(response);
-   }
- ));
-}
-
-  delete(email) {
-    return new Promise((resolve, reject) => this.mongoDBModel.deleteOne(
-      { email: email }, (error, response) => {
+  updateProductDetails(data, params) {
+    return new Promise((resolve, reject) => this.mongoDBModel.findOneAndUpdate(
+      { id: params },
+      { $set: data },
+      { new: true },
+      (error, response) => {
         if (error) {
           return reject(this.handleError(error));
+        }
+        if (error == null && response == null) {
+          return reject(new Error({ error: true, msg: 'Record Not Found In DB' }));
         }
         return resolve(response);
       }
     ));
+  }
+
+  delete(id) {
+    return new Promise((resolve, reject) => this.mongoDBModel.deleteOne({ id }, (error, response) => {
+      if (error) {
+        return reject(this.handleError(error));
+      }
+      return resolve(response);
+    }));
   }
 
 

@@ -1,10 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 19/04/2018.
- */
-
-const requestPromise = require('request-promise');
-const crypto = require('crypto');
-
 const MongoDBHelper = require('../lib/MongoDBHelper');
 const ProductModel = require('../model/product');
 
@@ -44,17 +37,16 @@ class ProductService {
     });
   }
 
-  //updates a product in the DB
+  // updates a product in the DB
   updateProductDetails(parameter, id) {
     this.logger.info(`updating product with id ${id} to the database`);
     return this.mongoDBClientHelper.updateProductDetails(parameter, id);
   }
 
-  //delete product from the DB
-  deleteProduct(email) {
-    this.logger.info('Deleting product with email ', email);
-    return this.mongoDBClientHelper.delete(email);
+  // delete product from the DB
+  deleteProduct(id) {
+    this.logger.info('Deleting product with id ', id);
+    return this.mongoDBClientHelper.delete(id);
   }
-
 }
 module.exports = ProductService;

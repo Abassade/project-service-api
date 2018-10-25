@@ -1,6 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 19/04/2018.
- */
 const bluebird = require('bluebird');
 const config = require('../config/config');
 const serviceLocator = require('../lib/service_locator');

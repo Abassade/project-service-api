@@ -1,7 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 19/04/2018.
- */
-
 const Response = require('../lib/response_manager');
 
 class Product {

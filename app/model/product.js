@@ -1,7 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 20/10/2018.
- */
-
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({

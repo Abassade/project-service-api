@@ -1,7 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 20/10/2018.
- */
-
 module.exports.setup = function setup(server, servicelocator) {
   const productController = servicelocator.get('productController');
 

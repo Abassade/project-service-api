@@ -1,8 +1,3 @@
-/**
- * Created by Jebutu Morifeoluwa on 19/04/2018.
- */
-
-
 const appName = 'Product Service API';
 
 const config = {

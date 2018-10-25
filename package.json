@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://jebzmos4@bitbucket.org/terragonengineering/andromeda-user-service.git"
+    "url": "git+https://github.com/jebzmos4/user-service-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/terragonengineering/andromeda-user-service#readme",
+  "homepage": "https://github.com/jebzmos4/user-service-api",
   "devDependencies": {
     "chai": "4.1.2",
     "chai-http": "4.0.0",
