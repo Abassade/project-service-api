@@ -1,4 +1,4 @@
-FROM terragontech/node:6.9
+FROM node:6.9
 
 RUN cd /
 
