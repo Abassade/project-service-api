@@ -54,7 +54,7 @@ class Product {
       }, 400));
   }
 
-  // adds a new user to the database
+  // adds a new product to the database
   createProduct(req, res) {
     const parameter = req.body;
     if (!parameter) {
@@ -64,11 +64,11 @@ class Product {
       }, 400);
     } return this.service.createProduct(parameter)
       .then(data => Response.success(res, {
-        message: 'User successfully saved to the database',
+        message: 'Product successfully saved to the database',
         response: data
       }, 200))
       .catch(error => Response.failure(res, {
-        message: 'An error occured while saving user to database',
+        message: 'An error occured while saving product to database',
         response: error,
       }, 400));
   }
