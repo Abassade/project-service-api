@@ -1,6 +1,8 @@
 Product Service API
 ==============================================
 
+Heroku URL: https://stormy-castle-99898.herokuapp.com/
+
 The product Service API has Endpoints that can perform basic CRUD actions
 
 Clone repository and run npm install to setup dependencies
@@ -11,28 +13,7 @@ Add the parameters below (`add your own values`)
 
 **Environment Variables:**
 ```
-appName='User Authentication Service'
-NODE_ENV=testing
-NODE_PATH=./app
-APP_URL=''
-APP_PORT=4040
-
-# MongoDB Credentials
-MONGODB_HOST='localhost'
-MONGODB_PORT='27017'
-MONGODB_USER=
-MONGODB_PASSWORD=
-MONGODB_DATABASE_NAME='ProductDB'
-MONGODB_LOG_LEVEL='trace'
-
-
-LOG_LEVEL=silly
-LOG_ENABLE_CONSOLE=true
-
-ALLOWEDORIGINS='http://api.myapp.com, http://web.myapp.com'
-PREFLIGHTMAXAGE= 600
-EXPOSEDHEADERS='Cache-Control', 'Content-Language', 'Content-Type', 'Expires', 'Last-Modified', 'Pragma'
-ALLOWEDHEADERS='origin', 'accept', 'Accept-Language', 'Content-Language', 'Content-Type'
+check `sample.env` file
 ```
 
 Get API running
