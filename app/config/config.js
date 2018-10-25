@@ -12,7 +12,7 @@ const config = {
       username: process.env.MONGODB_USER,
       password: process.env.MONGODB_PASSWORD,
       port: process.env.MONGODB_PORT,
-      db: process.env.MONGODB_DATABASE_NAME,
+      db: process.env.MONGODB_DATABASE_NAME
     }
   },
   logging: {
